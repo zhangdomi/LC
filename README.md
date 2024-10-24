@@ -1,3 +1,6 @@
+Documenting my Leetcode journey
+
+
 Total Solved  | 2
 ------------- | -------------
 Easy  | 2
