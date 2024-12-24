@@ -1,0 +1,29 @@
+class Solution(object):
+    def mergeAlternately(self, word1, word2):
+        """
+        :type word1: str
+        :type word2: str
+        :rtype: str
+        """
+        
+        ptr1 = 0
+        ptr2 = 0
+        ret = ""
+
+        while (ptr1 < len(word1)) and (ptr2 < len(word2)):
+            ret += word1[ptr1]
+            ret += word2[ptr2]
+
+            ptr1 += 1
+            ptr2 += 1
+        
+        if len(word1) > len(word2):
+            for i in range (ptr1, len(word1)):
+                ret += word1[i]
+        else:
+            for i in range (ptr2, len(word2)):
+                ret += word2[i]
+
+        return ret
+
+# Time: O(n)
