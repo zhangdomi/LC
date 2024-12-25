@@ -1,0 +1,22 @@
+class Solution(object):
+    def gcdOfStrings(self, str1, str2):
+        """
+        :type str1: str
+        :type str2: str
+        :rtype: str
+        """
+        
+        len1, len2 = len(str1), len(str2)
+
+        def isDivisor(l):
+            if len1 % l or len2 % l:
+                return False
+            t1, t2 = (len1 // l), (len2 // l)
+            return str1[:l] * t1 == str1 and str1[:l] * t2 == str2
+
+        for l in range(len1, 0, -1):
+            if isDivisor(l):
+                return str1[:l]
+        return ""
+
+        #Time: O(min(m, n) * (m + n))
