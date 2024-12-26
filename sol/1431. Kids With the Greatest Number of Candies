@@ -1,0 +1,12 @@
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        
+        def getMax(candies):
+            m = -1
+            for i in candies:
+                m = max(m, i)
+            return m
+        
+        m = getMax(candies)
+        return [(i + extraCandies >= m) for i in candies]
+
