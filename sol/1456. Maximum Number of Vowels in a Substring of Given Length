@@ -1,0 +1,24 @@
+class Solution:
+    def maxVowels(self, s: str, k: int) -> int:
+        vowels = ['a', 'i', 'o', 'u', 'e']
+
+        l, r = 0, k-1
+
+        maxVow = float('-inf')
+        temp = 0
+        for c in s[l:k]:
+            if c in vowels:
+                temp += 1
+        maxVow = max(temp, maxVow)
+
+        for i in range(k, len(s)):
+            if s[l] in vowels:
+                temp -= 1
+            l, r = l+1, r+1
+            if s[r] in vowels:
+                temp += 1
+            maxVow = max(temp, maxVow)
+
+        return maxVow
+
+        #Time: O(n)
