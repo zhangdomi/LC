@@ -1,8 +1,8 @@
 Documenting my Leetcode journey
 
 
-Total Solved  | 30
+Total Solved  | 31
 ------------- | ------------
 Easy  | 21
-Medium  | 9
+Medium  | 10
 Hard  | 0
