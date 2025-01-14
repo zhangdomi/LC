@@ -1,0 +1,16 @@
+class Solution:
+    def removeStars(self, s: str) -> str:
+        num_stack = []
+
+        for c in s:
+            if c != '*':
+                num_stack.append(str(c))
+            else:
+                num_stack.pop()
+        
+        return ''.join(num_stack)
+
+    #Use appropriate data-structure to make this easy
+    #Time: O(n), Space: O(n)
+
+        
