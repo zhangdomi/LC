@@ -1,0 +1,26 @@
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+        signs = ['+', '-', '*', '/']
+
+        for token in tokens:
+            # number
+            if token not in signs:
+                stack.append(token)
+            # sign
+            else:
+                second = int(stack.pop())
+                first = int(stack.pop())
+                if token == '+':
+                    stack.append(first + second)
+                elif token == '-':
+                    stack.append(first - second)
+                elif token == '*':
+                    stack.append(first * second)
+                else:
+                    stack.append(int(first / second))
+            
+            # print(stack)
+        if len(stack) == 1:
+            return int(stack.pop())
+
